@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel=stylesheet href="sudoku.css">
+    </head>
+    <body ng-app="sudokuApp" ng-controller="sudokuAppCtrl">
+       <table>
+         <tr ng-repeat="row in board">
+           <td class="numberCell" ng-repeat="column in row">
+            <input type="number" min="1" max="9" class="numberEntry" ng-show="!solved" ng-model="board[$parent.$index][$index]"></input>
+            <div ng-show="solved">{{column}}</div>
+           </td>
+         </tr>
+       </table>
+       <button ng-click="solvePuzzle()">Solve</button>
+    </body>
+    <script src="https://code.angularjs.org/1.0.6/angular.js"></script> 
+    <script src="sudoku.js"></script>
+</html>
