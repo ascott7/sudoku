@@ -58,7 +58,7 @@ function Board (theBoard) {
     }
 
     this.boardLegal = function() {
-        return this.rowsLegal() || this.columnsLegal() || this.squaresLegal();
+        return this.rowsLegal() && this.columnsLegal() && this.squaresLegal();
     }
 
     this.rowsLegal = function() {
